@@ -1,0 +1,71 @@
+/*utilities*/
+/*normalize*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif; }
+
+li {
+  list-style-type: none; }
+
+a {
+  color: #82b3ae;
+  text-decoration: none; }
+
+body {
+  background-color: #05050e; }
+
+/*general*/
+.navbar {
+  background-color: #121337 !important;
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28130, 179, 174, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+  .navbar .navbar-brand,
+  .navbar .nav-link {
+    color: #82b3ae; }
+
+.navbar-toggler:focus {
+  box-shadow: none; }
+
+.boton_nav {
+  background-color: #05050e; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #121337;
+  color: #82b3ae; }
+
+/*Layout*/
+.container_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 20px 0; }
+  .container_img img {
+    border-radius: 200px;
+    width: 250px; }
+
+.index_contacto {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  color: #82b3ae; }
+  .index_contacto p {
+    margin: auto 10px; }
+  .index_contacto a {
+    width: 100%;
+    display: flex; }
+  .index_contacto li {
+    display: flex;
+    margin: 20px 0; }
+
+h1, h2 {
+  text-align: center;
+  color: white;
+  padding: 5px; }
