@@ -1,0 +1,27 @@
+{%extends 'App/base.html'%}
+{%load static%}
+
+{%block main%}
+    <section>
+        <h4 class="h4">
+            My projects
+        </h4>
+        <div class="card_container">
+            {%for i in object_list%}
+            <div class="card_project">
+                <img src="{{i.image.url}}" alt="">
+                <div class="text">
+                    <h6>{{i.name}}</h6>
+                    <p>{{i.description}}</p>
+                </div>
+                <div class="button_container">
+                    <button class="card_project__button"><a target="_blank" href="{{i.repository}}"><i class="fa-brands fa-github fa-1x"></i>Repository</a></button>
+                    {%if i.git_page%}
+                    <button class="card_project__button"><a target="_blank" href="{{i.git_page}}">Github page</a></button> 
+                    {%endif%}
+                </div>             
+            </div>
+            {%endfor%}
+        </div>
+    </section>
+{%endblock%}

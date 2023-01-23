@@ -1,4 +1,4 @@
-/portfolio/portfolio/node_modules/
-/portfolio/portfolio/static/node_modules
-/portfolio/portfolio/static/package-lock.json
-/portfolio/portfolio/static/package.json
+/portfolio/App/static/App/node_modules
+portfolio/App/static/App/package-lock.json
+portfolio/App/static/App/package.json
+/portfolio/App/static/App/scss

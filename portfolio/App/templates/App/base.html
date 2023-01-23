@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,50 +17,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <!--CSS-->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="{% static 'App\css\style.css' %}">
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Pablo Candia</a>
+                <a class="navbar-brand" href="{% url 'inicio' %}">Pablo Candia</a>
                 <button class="navbar-toggler boton_nav" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Skills</a>
+                            <a class="nav-link" href="{% url 'inicio' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Projects</a>
+                            <a class="nav-link" href="{%url 'about'%}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="{%url 'projects'%}">Projects</a>
                         </li>
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        <div class="container_img">
-            <img src="./assets/images/perfil/default.webp" alt="">
-        </div>
-        <h1>Pablo Candia</h1>
-        <h2>Web developer</h2>
-        <div class="index_contacto">
-            <ul>
-                <li><i class="fa-solid fa-phone fa-2x"></i><p>+54 11-3651-9209</p></li>
-                <li><i class="fa-regular fa-envelope fa-2x"></i><p>pablocandia395@gmail.com</p></li>
-                <li><a href=""><i class="fa-brands fa-github fa-2x"></i><p>linkgithub.com</p></a></li>
-            </ul>
-        </div>
+        {%block main%}
+
+        {%endblock%}
     </main>
     <footer>
         <p>Pablo Candia &#169 | All Rights Reserved</p>
