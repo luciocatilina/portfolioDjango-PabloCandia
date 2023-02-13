@@ -1,29 +1,61 @@
 {%extends 'App/base.html'%}
 {%load static%}
 {%block titulo%}
-<title>Projects</title>
+<title>Pablo Candia - Projects</title>
 {%endblock%}
 {%block main%}
-    <section>
-        <h4 class="h4">
-            My projects
-        </h4>
-        <div class="card_container">
-            {%for i in object_list%}
-            <div class="card_project">
-                <img src="{{i.image.url}}" alt="">
-                <div class="text">
-                    <h6>{{i.name}}</h6>
-                    <p>{{i.description}}</p>
-                </div>
-                <div class="button_container">
-                    <button class="card_project__button"><a target="_blank" href="{{i.repository}}"><i class="fa-brands fa-github fa-1x"></i>Repository</a></button>
-                    {%if i.git_page%}
-                    <button class="card_project__button"><a target="_blank" href="{{i.git_page}}">Github page</a></button> 
+<section>
+    <h4 class="h4">
+        My projects
+    </h4>
+    <div class="card_container">
+        {%for i in object_list%}
+        <div class="card_project">
+            <div class="corousel_container">
+                {%for image in images%}
+
+                    {%if image.project_id == i.pk%}
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            {%if image.first%}
+                            <div class="carousel-item active">
+                                <img src="{{image.image1.url}}" class="d-block w-100" alt="...">
+                            </div>
+                            {%else%}
+                          <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                          </div>
+                            {%endif%}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+
                     {%endif%}
-                </div>             
+                {%endfor%}
+
+                
             </div>
-            {%endfor%}
+            <div class="text">
+                <h6>{{i.name}}</h6>
+                <p>{{i.description}}</p>
+            </div>
+            <div class="button_container">
+                <button class="card_project__button"><a target="_blank" href="{{i.repository}}"><i
+                            class="fa-brands fa-github fa-1x"></i>Repository</a></button>
+                {%if i.git_page%}
+                <button class="card_project__button"><a target="_blank" href="{{i.git_page}}">Github page</a></button>
+                {%endif%}
+            </div>
         </div>
-    </section>
+        {%endfor%}
+        
+    </div>
+</section>
 {%endblock%}

@@ -1,0 +1,26 @@
+{%extends 'App/base.html'%}
+
+{%block titulo%}
+    <title>Pablo Candia - Add project</title>
+{%endblock%}
+
+{%block main%}
+<section class="description">
+    <h4>
+        Add project
+    </h4>
+</section>
+
+<section>
+    <div class="grid_container">
+        <div class="form_container">
+            <form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class='boton'>Add</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{%endblock%}

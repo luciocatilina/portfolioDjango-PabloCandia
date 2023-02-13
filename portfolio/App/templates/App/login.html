@@ -1,0 +1,19 @@
+{% extends 'App/base.html' %}
+{%block titulo%}
+    <title>Pablo Candia - Login</title>
+{%endblock%}
+{%block main%}
+<section>
+    <div class="grid_container">
+        <div class="form_container">
+            <form action="" method="POST"> {% csrf_token %}
+                {{form_login.as_p}}
+                <button type="submit" class='boton'>Login</button>
+            </form>
+        </div>
+    </div>
+    
+</section>
+
+    
+{%endblock%}

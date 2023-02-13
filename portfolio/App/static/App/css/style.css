@@ -85,8 +85,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  color: #82b3ae; }
+  padding: 50px 10px;
+  color: #82b3ae;
+  flex-direction: column; }
   .index_contacto p {
     margin: auto 0 auto 10px; }
   .index_contacto a {
@@ -151,6 +152,30 @@ h1, h2 {
     margin: 0 15px;
     text-align: center; } }
 
+.form_container {
+  grid-area: skills;
+  margin: auto;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .form_container form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px; }
+    .form_container form p {
+      width: 100%; }
+      .form_container form p label, .form_container form p input {
+        width: 100%;
+        color: #82b3ae; }
+      .form_container form p input {
+        background-color: #121337;
+        outline: none;
+        border: none;
+        padding: 5px; }
+
 /*components*/
 @keyframes zoomletter {
   from {
@@ -169,7 +194,8 @@ h1, h2 {
     border: 10px solid #121337;
     background-color: #0e0e29;
     border-radius: 10px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    min-height: 200px; }
     .card_container .card_knowledge h6 {
       font-size: 1.2rem;
       padding: 10px 0 20px 0; }
@@ -210,24 +236,47 @@ h1, h2 {
     font-size: 20px;
     padding-right: 5px; }
 
+.corousel_container {
+  min-height: 250px; }
+
 @media screen and (max-width: 480px) {
   .card_project {
     min-width: 300px; }
     .card_project .button_container {
       flex-direction: column; }
-      .card_project .button_container .card_project__button {
+      .card_project .button_container .card_project__button, .card_project .button_container .boton {
         margin: 10px 0;
         min-width: 120px; } }
 
-.card_project__button {
+.card_project__button, .boton {
   background-color: #121337;
   border: none;
   width: 40%;
   padding: 10px 5px;
   border-radius: 10px; }
-  .card_project__button:hover {
+  .card_project__button:hover, .boton:hover {
     background-color: #0e0e29; }
-  .card_project__button:active {
+  .card_project__button:active, .boton:active {
     background-color: #121337; }
-  .card_project__button:hover a {
+  .card_project__button:hover a, .boton:hover a {
     color: white; }
+
+.boton_info {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  justify-content: center; }
+  .boton_info::after {
+    content: '/>'; }
+  .boton_info::before {
+    content: '<'; }
+
+.boton {
+  color: #82b3ae; }
+
+@media screen and (min-width: 1024px) {
+  .boton_info {
+    font-size: 2rem; }
+    .boton_info:hover {
+      animation-name: zoomletter;
+      animation-fill-mode: forwards;
+      animation-duration: .5s; } }
