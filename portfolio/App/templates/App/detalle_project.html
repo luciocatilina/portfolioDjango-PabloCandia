@@ -1,0 +1,74 @@
+{% extends 'App/base.html' %}
+{%load static%}
+{%block titulo%}
+{%for project in projects%}
+<title>Projecto {{project.name}}</title>
+{%endfor%}
+{%endblock%}
+
+{%block main%}
+{%for project in projects%}
+<section class="description">
+    <h4>{{project.name}}</h4>
+</section>
+
+<section class="galeria_proyecto">
+    <div class="carousel_container">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                {%for i in total|make_list%}
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{i}}" class="active"
+                    aria-current="true" aria-label="Slide {{i|add:'1'}}"></button>
+                {%endfor%}
+            </div>
+            <div class="carousel-inner">
+                    {%for name_project in images%}
+                    <div class="carousel-item {%if forloop.first%}active{%endif%}">
+                        <img src="{{name_project.image.url}}" class="d-block w-100" alt="...">
+                    </div>
+
+                    {%endfor%}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <i class="fa-sharp fa-solid fa-arrow-left fa-4x"></i>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <i class="fa-sharp fa-solid fa-arrow-right fa-4x"></i>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="description_container">
+        <div class="description_container__cards_info">
+            {%for project in projects%}
+            <div class="description_container__cards_info__item">
+                <h5>Descripción</h5>
+                <p>{{project.description}}</p>
+            </div>
+            <div class="description_container__cards_info__item">
+                <h5>Funcionalidades</h5>
+                <p>{{project.functionalities}}</p>
+            </div>
+            <div class="description_container__cards_info__item">
+                <h5>Herramientas utilizadas </h5>
+                <p>{{project.used_tools}}</p>
+            </div>
+            {%endfor%}
+        </div>
+        {%if project.repository%}
+        <div class="button_container">
+            <a href="{{project.repository}}" class="card_project__button" target="_blank"><i class="fa-brands fa-github"></i>Respositorio</a>
+        {%endif%}
+        {%if project.git_page%}
+            <a href="{{project.git_page}}" class="card_project__button" target="_blank"><i class="fa-solid fa-globe"></i>Hosting</a>
+        </div>
+        {%endif%}
+        </div>
+    </div>
+    {%endfor%}
+</section>
+
+{%endblock%}

@@ -8,5 +8,6 @@ urlpatterns = [
     path('projects', List_project.as_view(), name='projects'),
     path('login', iniciar_sesion, name='login'),
     path('logout', LogoutView.as_view(), name='logout'),
-    path('create project', CreateProject.as_view(), name='create_project')
+    path('create project', CreateProject.as_view(), name='create_project'),
+    path('project/<int:pk>', DetalleProject.as_view(), name='project_detail')
 ]

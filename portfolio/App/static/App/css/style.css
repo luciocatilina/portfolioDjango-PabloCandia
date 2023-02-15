@@ -62,7 +62,8 @@ footer {
   padding: 20px;
   width: 100%;
   background-color: #121337;
-  color: #82b3ae; }
+  color: #82b3ae;
+  margin-top: 30px; }
   footer p {
     margin: 0; }
 
@@ -148,6 +149,8 @@ h1, h2 {
     margin-left: 5px; }
 
 @media screen and (max-width: 720px) {
+  .description h4 {
+    font-size: 2rem; }
   .description p {
     margin: 0 15px;
     text-align: center; } }
@@ -155,7 +158,6 @@ h1, h2 {
 .form_container {
   grid-area: skills;
   margin: auto;
-  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -164,7 +166,8 @@ h1, h2 {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 0 20px; }
+    margin: 0 20px;
+    margin-bottom: 20px; }
     .form_container form p {
       width: 100%; }
       .form_container form p label, .form_container form p input {
@@ -175,6 +178,52 @@ h1, h2 {
         outline: none;
         border: none;
         padding: 5px; }
+
+.login {
+  height: 85vh; }
+
+.galeria_proyecto {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.description_container h5 {
+  color: #82b3ae;
+  font-size: 1.5rem; }
+
+.description_container p {
+  color: white; }
+
+.fa-arrow-left, .fa-arrow-right {
+  color: #121337; }
+
+@media screen and (min-width: 1024px) {
+  .galeria_proyecto {
+    flex-direction: row;
+    margin: 0; }
+  .carousel_container {
+    width: 65%;
+    max-width: 1015px;
+    margin: 0 20px; }
+    .carousel_container img {
+      object-fit: contain;
+      height: 700px; }
+  .description_container {
+    width: 30%;
+    max-width: 500px; } }
+
+@media screen and (max-width: 1023px) {
+  .galeria_proyecto {
+    flex-direction: column-reverse; }
+  .carousel_container {
+    width: 100%;
+    margin: 0; }
+  .description_container {
+    width: 90%; }
+    .description_container .description_container__cards_info {
+      display: flex;
+      justify-content: center;
+      flex-direction: column; } }
 
 /*components*/
 @keyframes zoomletter {
@@ -204,7 +253,7 @@ h1, h2 {
   .card_container {
     margin: 10px; }
     .card_container .card_knowledge {
-      width: 90%; } }
+      width: 100%; } }
 
 .card_project {
   width: 30%;
@@ -219,19 +268,23 @@ h1, h2 {
     width: 100%;
     border-radius: 14px; }
   .card_project .text {
-    height: 150px; }
+    min-height: 150px; }
     .card_project .text h6 {
       text-align: center;
       font-size: 1.5rem;
-      padding-top: 5px; }
+      padding: 20px 5px 0 5px; }
     .card_project .text p {
       font-size: 1rem;
-      padding: 10px 15px; }
+      padding: 10px 5px 0 5px; }
   .card_project .button_container {
     display: flex;
     padding: 10px;
     justify-content: space-evenly;
     align-items: center; }
+    .card_project .button_container a {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
   .card_project i {
     font-size: 20px;
     padding-right: 5px; }
@@ -239,9 +292,15 @@ h1, h2 {
 .corousel_container {
   min-height: 250px; }
 
+@media screen and (max-width: 780px) {
+  .card_project {
+    width: 70%;
+    min-width: 360px; } }
+
 @media screen and (max-width: 480px) {
   .card_project {
-    min-width: 300px; }
+    min-width: 300px;
+    width: 90%; }
     .card_project .button_container {
       flex-direction: column; }
       .card_project .button_container .card_project__button, .card_project .button_container .boton {
@@ -255,7 +314,8 @@ h1, h2 {
   padding: 10px 5px;
   border-radius: 10px; }
   .card_project__button:hover, .boton:hover {
-    background-color: #0e0e29; }
+    background-color: #0e0e29;
+    color: white; }
   .card_project__button:active, .boton:active {
     background-color: #121337; }
   .card_project__button:hover a, .boton:hover a {
@@ -269,6 +329,18 @@ h1, h2 {
     content: '/>'; }
   .boton_info::before {
     content: '<'; }
+
+.button_container {
+  display: flex;
+  justify-content: center; }
+  .button_container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 5px; }
+    .button_container a i {
+      margin-right: 5px; }
 
 .boton {
   color: #82b3ae; }

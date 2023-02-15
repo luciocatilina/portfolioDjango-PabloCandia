@@ -5,7 +5,7 @@
 {%block main%}
 <section>
     <div class="grid_container">
-        <div class="form_container">
+        <div class="form_container login">
             <form action="" method="POST"> {% csrf_token %}
                 {{form_login.as_p}}
                 <button type="submit" class='boton'>Login</button>

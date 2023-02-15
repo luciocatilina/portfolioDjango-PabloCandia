@@ -5,11 +5,14 @@ from django.forms.models import inlineformset_factory
 
 class ImageForm(forms.ModelForm):
 
-    image=forms.ImageField(label=Image)
+    #image=forms.ImageField(label='Image')
 
     class Meta:
         model=Image
         exclude=()
+        widgets = {
+        'image': forms.ClearableFileInput(attrs={"multiple": True})
+       }
 
 class ProjectForm(forms.ModelForm):
 
@@ -20,5 +23,5 @@ class ProjectForm(forms.ModelForm):
 
 ImageFormSet= inlineformset_factory(
     Project, Image, form=ImageForm,
-    fields=['image',], extra=7, can_delete=True
+    fields=['image'], extra=7, can_delete=True
 )
