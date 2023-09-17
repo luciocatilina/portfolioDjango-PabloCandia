@@ -67,10 +67,6 @@ footer {
   footer p {
     margin: 0; }
 
-.absoluto {
-  position: absolute;
-  bottom: 0; }
-
 /*Layout*/
 .container_img {
   display: flex;
@@ -121,7 +117,8 @@ h1, h2 {
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: auto minmax(300px, 800px) auto;
-  grid-template-areas: '. info .' '. skills .';
+  grid-template-areas: '. info .'
+ '. skills .';
   color: white; }
 
 .description {
